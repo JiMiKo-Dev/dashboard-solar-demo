@@ -1,0 +1,36 @@
+.leaflet-popup-content-wrapper {
+    background-color: #1e1e1e;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.leaflet-popup-tip {
+    background: #1e1e1e;
+}
+
+.pulse-marker {
+    width: 15px;
+    height: 15px;
+    background: #5efc82;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 10px #5efc82;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+}
