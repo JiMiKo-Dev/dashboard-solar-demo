@@ -8,8 +8,6 @@
   font-style: normal;
 
   color-scheme: light dark;
-  /* color: rgba(255, 255, 255, 0.87); */
-  /* color: #05fc70; */
   color: #000;
   background-color: #242424;
 
@@ -21,6 +19,7 @@
 
 #root {
   margin: 0 !important;
-  padding: 5px !important;
+  padding: 0px !important;
   max-width: 2460px !important;
+  height: 100vh !important;
 }
