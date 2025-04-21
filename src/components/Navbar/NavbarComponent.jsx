@@ -1,29 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import './Navbar.scss';
 
 const NavbarComponent = () => {
     const contentRef = useRef(null);
-    const [svgWidth, setSvgWidth] = useState(700);
 
-    useEffect(() => {
-        if (contentRef.current) {
-            const contentWidth = contentRef.current.offsetWidth;
-            const newWidth = contentWidth + 100; // padding ซ้ายขวา
-            setSvgWidth(Math.max(600, newWidth));
-        }
-    }, []);
-
-    const svgHeight = 100;
-    const pathHeight = 70;
 
     return (
-        <div className="bg-[#0b0c2a] flex justify-center py-6">
+
+        <div className="relative flex items-center justify-center w-full py-1">
             <svg
-                width={svgWidth}
-                height={svgHeight}
-                viewBox={`0 0 600 ${svgHeight}`}
+                className="w-full h-[70px] glow-svg z-10"
+                viewBox="0 0 1600 70"
                 preserveAspectRatio="none"
-                className="glow-svg"
             >
                 <defs>
                     <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -40,32 +28,26 @@ const NavbarComponent = () => {
                     </filter>
                 </defs>
 
-                {/* PATH กรอบ */}
                 <path
                     d={`
-                        M0,0 
-                        L40,0 
-                        Q60,0 80,20 
-                        L100,${pathHeight - 20} 
-                        Q120,${pathHeight} 150,${pathHeight} 
-                        L450,${pathHeight} 
-                        Q480,${pathHeight} 500,${pathHeight - 20} 
-                        L520,20 
-                        Q540,0 560,0 
-                        L600,0`}
+          M0,0 
+          L200,0 
+          Q220,0 240,20 
+          L280,50 
+          Q300,70 340,70 
+          L1260,70 
+          Q1300,70 1320,50 
+          L1360,20 
+          Q1380,0 1400,0 
+          L1600,0
+        `}
                     stroke="url(#glowGradient)"
                     strokeWidth="2"
                     fill="none"
                     filter="url(#glow)"
                 />
 
-                {/* TEXT CONTENT ครอบด้วย foreignObject */}
-                <foreignObject
-                    x="0"
-                    y="10"
-                    width="600"
-                    height={svgHeight - 20}
-                >
+                <foreignObject x="0" y="10" width="1600" height="50">
                     <div
                         className="flex flex-col items-center justify-center w-full h-full text-center text-white"
                         ref={contentRef}

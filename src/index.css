@@ -7,19 +7,44 @@
   font-weight: 400;
   font-style: normal;
 
-  color-scheme: light dark;
-  color: #000;
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
-  margin: 0 !important;
-  padding: 0px !important;
-  max-width: 2460px !important;
-  height: 100vh !important;
+@layer utilities {
+  .bg-sciFi {
+    background-image: url("/bg-neon-grid.jpg"); /* ใส่ภาพพื้นหลังแนว sci-fi grid ที่เตรียมไว้ */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  .shadow-neon {
+    box-shadow: 0 0 12px #00f7ff55, 0 0 18px #00f7ff22;
+  }
+
+  .animate-pulseGlow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      box-shadow: 0 0 12px #00f7ff55, 0 0 18px #00f7ff22;
+    }
+    50% {
+      box-shadow: 0 0 20px #00f7ffaa, 0 0 30px #00f7ff88;
+    }
+  }
+
+  .text-neonBlue {
+    color: #00f7ff;
+  }
+
+  .border-neonBlue {
+    border-color: #00f7ff;
+  }
 }
